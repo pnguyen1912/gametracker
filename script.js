@@ -17,7 +17,7 @@ const doOCR = async () => {
   c.width = 40;
   c.height = 10;
   c.getContext('2d').drawImage(video, 1100, 1070, 40, 10, 0, 0, 40, 10);
-  let imgData = c.getContext('2d').getImageData(20, 5, 1, 1)
+  let imgData = c.getContext('2d').getImageData(10, 5, 1, 1)
   red = imgData.data[0];
   green = imgData.data[1];
   blue = imgData.data[2];
@@ -34,7 +34,7 @@ const doOCR = async () => {
 };
 
 video.addEventListener('play', () => {
-  timerId = setInterval(doOCR, 1000);
+  timerId = setInterval(doOCR, 300);
 });
 video.addEventListener('pause', () => {
   clearInterval(timerId);
